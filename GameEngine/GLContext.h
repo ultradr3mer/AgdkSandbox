@@ -98,6 +98,8 @@ class GLContext {
   ANativeWindow* GetANativeWindow(void) const { return window_; };
   EGLDisplay GetDisplay() const { return display_; }
   EGLSurface GetSurface() const { return surface_; }
+#else
+  void Reshape(int width, int height);
 #endif
 
   bool Invalidate();

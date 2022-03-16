@@ -75,7 +75,12 @@ void GLContext::InitGLES() {
 //--------------------------------------------------------------------------------
 // Dtor
 //--------------------------------------------------------------------------------
-GLContext::~GLContext() { Terminate(); }
+GLContext::~GLContext() { 
+  #ifdef __ANDROID__
+  Terminate(); 
+  #endif
+}
+
 #ifdef __ANDROID__
 bool GLContext::Init(ANativeWindow* window) {
   if (egl_context_initialized_) return true;
@@ -273,6 +278,14 @@ bool GLContext::CheckExtension(const char* extension) {
   }
 
   return false;
+}
+
+#else
+
+void GLContext::Reshape(int width, int height)
+{
+  screen_width_ = width;
+  screen_height_ = height;
 }
 
 #endif

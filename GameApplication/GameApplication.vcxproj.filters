@@ -30,6 +30,9 @@
     <ClInclude Include="android_native_app_glue.h">
       <Filter>Header Files\Android</Filter>
     </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -40,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="android_native_app_glue.c">
       <Filter>Source Files\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
